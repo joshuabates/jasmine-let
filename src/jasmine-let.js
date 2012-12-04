@@ -17,7 +17,7 @@ jasmine.letHelper.get = function(name) {
   } else {
     value = this.sandbox[name]()
     if(typeof value === 'function') {
-      return value()
+      return value.apply(this)
     } else {
       return value
     }

@@ -34,7 +34,7 @@ describe('jasmine.letHelper', function() {
 
   describe('Function value', function() {
     this.let('level', 2)
-    this.let('subject', function() { return "Math 2" })
+    this.let('subject', function() { return "Math " + this.get('level')})
     it('should call subject method', function () {
       expect(this.get('subject')).toEqual('Math 2')
     }) 
