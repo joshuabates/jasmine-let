@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <title>Specs | Jasmine-Let</title>
+    <link rel="stylesheet" type="text/css" href="spec/vendor/jasmine/jasmine.css">
+    <script type="text/javascript" src="spec/vendor/jquery.js"></script>
+    <script type="text/javascript" src="spec/vendor/jasmine/jasmine.js"></script>
+    <script type="text/javascript" src="spec/vendor/jasmine/jasmine-html.js"></script>
+    
+    <script type="text/javascript" src="src/jasmine-let.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Specs | Jasmine-Let</h1>
+    </div>
+</body>
+<script type="text/javascript" src="spec/jasmine_let_spec.js"></script>
+<script type="text/javascript">
+    (function() {
+        var jasmineEnv = jasmine.getEnv();
+        var trivialReporter = new jasmine.TrivialReporter();
+        
+        jasmineEnv.addReporter(trivialReporter);
+        
+        jasmineEnv.specFilter = function(spec) {
+            return trivialReporter.specFilter(spec);
+        };
+      
+        window.onload = function() {
+            jasmineEnv.execute(); 
+        }
+    })();
+</script>
+</html>
